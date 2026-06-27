@@ -1,0 +1,148 @@
+/* AB Fitness Gym - FAQ & Fitness Tips CSS styling */
+
+.tips-wrapper {
+  padding-top: 120px;
+  padding-bottom: 5rem;
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+.tips-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.tips-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+/* Category grid buttons */
+.tips-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tips-category-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.tips-category-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.tips-category-btn.active {
+  background: var(--accent-purple-glow);
+  border-color: var(--accent-purple);
+  color: #fff;
+  box-shadow: var(--shadow-purple-glow);
+}
+
+/* Accordion Component */
+.faq-accordion-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-accordion-item {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: border-color var(--transition-normal);
+}
+
+.faq-accordion-item:hover {
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.faq-accordion-header {
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  width: 100%;
+  border: none;
+  text-align: left;
+  gap: 1rem;
+}
+
+.faq-accordion-question {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-heading);
+}
+
+.faq-accordion-icon {
+  color: var(--accent-purple);
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.faq-accordion-item.active .faq-accordion-icon {
+  transform: rotate(180deg);
+  color: var(--accent-pink);
+}
+
+.faq-accordion-item.active {
+  border-color: rgba(236, 72, 153, 0.25);
+}
+
+.faq-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal) ease-out, padding var(--transition-normal) ease-out;
+  padding: 0 1.75rem;
+}
+
+.faq-accordion-item.active .faq-accordion-body {
+  max-height: 300px; /* Safe upper limit for accordion content */
+  padding-bottom: 1.5rem;
+}
+
+.faq-accordion-answer {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-accordion-answer p {
+  margin-bottom: 0.75rem;
+}
+
+.faq-accordion-answer p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .tips-title {
+    font-size: 2.25rem;
+  }
+  .faq-accordion-header {
+    padding: 1rem 1.25rem;
+  }
+  .faq-accordion-question {
+    font-size: 1rem;
+  }
+}

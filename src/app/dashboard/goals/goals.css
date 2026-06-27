@@ -1,0 +1,159 @@
+/* AB Fitness Gym - Goals CRUD Dashboard CSS styling */
+
+.goals-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Header & Form inline actions */
+.goals-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Grid Layout */
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card layout */
+.goal-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  height: 100%;
+}
+
+.goal-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.goal-card-title {
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.goal-card-type {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* SVG Completion Ring styles */
+.goal-ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.goal-ring-svg {
+  transform: rotate(-90deg);
+}
+
+.goal-ring-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.03);
+  stroke-width: 8;
+}
+
+.goal-ring-circle-progress {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+/* Accent colors for rings */
+.goal-ring-circle-progress.type-weight {
+  stroke: var(--accent-purple);
+  filter: drop-shadow(0 0 4px var(--accent-purple-glow));
+}
+
+.goal-ring-circle-progress.type-strength {
+  stroke: var(--accent-pink);
+  filter: drop-shadow(0 0 4px var(--accent-pink-glow));
+}
+
+.goal-ring-circle-progress.type-endurance {
+  stroke: var(--accent-emerald);
+  filter: drop-shadow(0 0 4px var(--accent-emerald-glow));
+}
+
+.goal-ring-percent-text {
+  position: absolute;
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: #fff;
+}
+
+/* Card details & targets */
+.goal-metrics-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.goal-metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.goal-metric-val {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Inline update slider/form panel */
+.goal-update-panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Drawer / Form modal container styles */
+.goals-form-container {
+  max-width: 500px;
+  margin: 0 auto 2.5rem auto;
+  padding: 2rem;
+}
+
+.goals-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .goals-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

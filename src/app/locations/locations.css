@@ -1,0 +1,184 @@
+/* AB Fitness Gym - Locator Page CSS styling */
+
+.locator-wrapper {
+  padding-top: 120px;
+  padding-bottom: 5rem;
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+.locator-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.locator-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+/* Filters bar */
+.locator-filters-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.locator-search-input-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.locator-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.locator-search-field {
+  padding-left: 2.75rem !important;
+}
+
+.locator-select-field {
+  width: 220px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.locator-select-field:focus {
+  outline: none;
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px var(--accent-purple-glow);
+}
+
+.locator-select-field option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Branch Cards Grid */
+.locator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.locator-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.locator-card-img-container {
+  height: 220px;
+  position: relative;
+  background-color: #201a2b;
+  overflow: hidden;
+}
+
+.locator-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.locator-card:hover .locator-card-img {
+  transform: scale(1.05);
+}
+
+.locator-card-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.locator-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.locator-branch-name {
+  font-size: 1.35rem;
+  font-family: var(--font-heading);
+}
+
+.locator-details-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.locator-details-icon {
+  color: var(--accent-pink);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.locator-amenities-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-light);
+}
+
+.locator-amenities-tag {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  color: var(--text-secondary);
+}
+
+/* No results state */
+.locator-no-results {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+  .locator-title {
+    font-size: 2.25rem;
+  }
+  .locator-filters-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .locator-select-field {
+    width: 100%;
+  }
+  .locator-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

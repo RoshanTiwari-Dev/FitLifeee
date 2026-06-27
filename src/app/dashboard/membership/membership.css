@@ -1,0 +1,355 @@
+/* AB Fitness Gym - Digital Membership Card & Payments CSS */
+
+.membership-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Card Showcase Workspace */
+.membership-card-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+  border-radius: var(--radius-xl);
+  border: 1px dashed var(--border-light);
+  perspective: 1000px;
+}
+
+/* The Digital Virtual Gym Card container */
+.virtual-gym-card {
+  width: 100%;
+  max-width: 450px;
+  height: 270px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+  color: #fff;
+  transition: all var(--transition-slow);
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow-lg), 0 30px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.virtual-gym-card:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
+  box-shadow: var(--shadow-lg), 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Cyber Metallic Textures based on Plan Tier */
+.virtual-gym-card.tier-silver {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #374151 100%);
+  border-color: rgba(209, 213, 219, 0.15);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(209, 213, 219, 0.05);
+}
+.virtual-gym-card.tier-silver:hover {
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(209, 213, 219, 0.15);
+}
+
+.virtual-gym-card.tier-gold {
+  background: linear-gradient(135deg, #2c1f0d 0%, #150f06 50%, #4c3710 100%);
+  border-color: rgba(245, 158, 11, 0.2);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(245, 158, 11, 0.15);
+}
+.virtual-gym-card.tier-gold:hover {
+  box-shadow: var(--shadow-lg), 0 0 50px rgba(245, 158, 11, 0.3);
+}
+
+.virtual-gym-card.tier-platinum {
+  background: linear-gradient(135deg, #1c0e35 0%, #0c051a 50%, #3b1c6e 100%);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(139, 92, 246, 0.2);
+}
+.virtual-gym-card.tier-platinum:hover {
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(139, 92, 246, 0.4);
+}
+
+/* Card Hologram Glare Highlight Effect */
+.virtual-gym-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.01) 30%,
+    rgba(255, 255, 255, 0.08) 48%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 52%,
+    rgba(255, 255, 255, 0.01) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(-15deg);
+  transition: transform var(--transition-slow);
+  pointer-events: none;
+}
+
+.virtual-gym-card:hover::after {
+  transform: translate(15%, 15%) rotate(-15deg);
+}
+
+/* Card Header elements */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 5;
+}
+
+.card-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.card-brand-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: #000;
+}
+
+.virtual-gym-card.tier-silver .card-brand-logo-icon {
+  background: #d1d5db;
+  color: #111827;
+}
+
+.virtual-gym-card.tier-gold .card-brand-logo-icon {
+  background: #fbbf24;
+  color: #150f06;
+}
+
+.virtual-gym-card.tier-platinum .card-brand-logo-icon {
+  background: var(--grad-primary);
+  color: #fff;
+}
+
+.card-tier-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Card Body elements */
+.card-chip-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  z-index: 5;
+}
+
+.card-smart-chip {
+  width: 38px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #e5e7eb 0%, #9ca3af 100%);
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.card-smart-chip::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.card-smart-chip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Card Number */
+.card-digital-number {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin: 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+/* Card Footer elements */
+.card-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 5;
+}
+
+.card-holder-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-holder-label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.card-holder-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.card-dates-container {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card-date-label {
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  margin-right: 0.25rem;
+}
+
+/* Embedded QR Graphic design */
+.card-qr-box {
+  width: 58px;
+  height: 58px;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 5;
+}
+
+.card-qr-image {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  display: block;
+}
+
+/* No Membership Alert styling */
+.membership-no-plan-card {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.membership-no-plan-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Payment Transaction Logs Section */
+.membership-history-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.payment-history-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.payment-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.payment-history-table th {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+  font-family: var(--font-heading);
+}
+
+.payment-history-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.payment-history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.payment-history-table tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* Screen Adaptability adjustments */
+@media (max-width: 500px) {
+  .virtual-gym-card {
+    height: 240px;
+    padding: 1.25rem;
+  }
+  .card-digital-number {
+    font-size: 1.2rem;
+    letter-spacing: 0.14em;
+  }
+  .card-brand-logo {
+    font-size: 1rem;
+  }
+  .card-qr-box {
+    width: 48px;
+    height: 48px;
+    padding: 3px;
+  }
+  .card-dates-container {
+    gap: 0.75rem;
+    font-size: 0.62rem;
+  }
+}

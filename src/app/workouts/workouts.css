@@ -1,0 +1,340 @@
+/* AB Fitness Gym - Exercises & Workouts CSS styling */
+
+.catalog-wrapper {
+  padding-top: 120px;
+  padding-bottom: 5rem;
+  background: radial-gradient(circle at 50% 0%, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+.catalog-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.catalog-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.catalog-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Nav Tabs bar */
+.catalog-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1px;
+}
+
+.catalog-tab {
+  padding: 1rem 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.catalog-tab:hover {
+  color: var(--text-primary);
+}
+
+.catalog-tab.active {
+  color: var(--accent-pink);
+  border-bottom-color: var(--accent-pink);
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+}
+
+/* Filters Layout */
+.catalog-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .catalog-filters {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Workout Cards Grid */
+.workouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 2rem;
+}
+
+.workout-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.workout-card-img-wrapper {
+  height: 200px;
+  position: relative;
+  background-color: #201a2b;
+  overflow: hidden;
+}
+
+.workout-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.workout-card:hover .workout-card-img {
+  transform: scale(1.05);
+}
+
+.workout-card-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.workout-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.workout-plan-name {
+  font-size: 1.35rem;
+  font-family: var(--font-heading);
+  transition: color var(--transition-fast);
+}
+
+.workout-card:hover .workout-plan-name {
+  color: var(--accent-pink);
+}
+
+.workout-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.workout-meta-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.workout-meta-val {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Exercises list */
+.exercise-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.exercise-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.exercise-card-title {
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+}
+
+.exercise-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exercise-instructions-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.exercise-instructions-preview {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Workout Plan Detail View styles */
+.workout-detail-wrapper {
+  padding-top: 120px;
+  padding-bottom: 6rem;
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+  min-height: 100vh;
+}
+
+.workout-detail-hero {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--border-light);
+}
+
+.workout-detail-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.workout-detail-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10, 9, 13, 0.1) 0%, rgba(10, 9, 13, 0.95) 100%);
+  z-index: 2;
+}
+
+.workout-detail-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 800px;
+}
+
+.workout-detail-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.workout-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.workout-detail-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.workout-detail-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .workout-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .workout-detail-hero {
+    height: 300px;
+    padding: 1.5rem;
+  }
+  .workout-detail-title {
+    font-size: 2.25rem;
+  }
+}
+
+.workout-exercises-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.workout-exercise-item {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.workout-exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.workout-exercise-name {
+  font-size: 1.35rem;
+  font-family: var(--font-heading);
+}
+
+.workout-exercise-presc {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--accent-pink);
+  font-size: 1.1rem;
+}
+
+.instruction-step {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.instruction-step:last-child {
+  margin-bottom: 0;
+}
